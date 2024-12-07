@@ -78,9 +78,9 @@ passport.deserializeUser(User.deserializeUser());
 
 app.engine("ejs", ejsMate);
 
-// app.get("/", (req, res) => {
-//   res.send("Home route");
-// });
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
